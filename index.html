@@ -30,6 +30,32 @@
             
         </div>
         <div class="result">ssh -o HostKeyAlgorithms=+ssh-rsa root@192.168.103.1</div>
+        <div>
+            <div>静态路由表设置</div>
+            <pre class="result">
+                route add -net 192.168.100.0/24 gw 192.168.100.1 #配置主路由的网段和网关
+            </pre>
+            <pre class="result">
+                # 配置文件
+                vi /etc/rc.local
+                route add -net 192.168.100.0/24 gw 192.168.100.1 #配置主路由的网段和网关
+            </pre>
+        </div>
+        <div>
+            <div>防火墙设置</div>
+            <pre class="result">
+                ip6tables -F
+                ip6tables -X
+                ip6tables -P INPUT ACCEPT
+                ip6tables -P OUTPUT ACCEPT
+                ip6tables -P FORWARD ACCEPT
+                iptables -F
+                iptables -X
+                iptables -P INPUT ACCEPT
+                iptables -P OUTPUT ACCEPT
+                iptables -P FORWARD ACCEPT
+            </pre>
+        </div>
     </body>
 </html>
 <script type="text/coffeescript">
