@@ -5,7 +5,7 @@
         body>div{
             margin:10px;
         }
-        .result0,.result1{
+        .result,.result0,.result1{
             word-break: break-all;
             padding:5px;
             background:#f2f2f2;
@@ -17,15 +17,16 @@
     <body>
         <div>小米路由器后台访问连接：<input class="check_base_url"><button class="check">解析</button></div>
         <div>获取访问地址
-            <a class="result0_a" href="#" target="_blank"><div class="result0">待解析</div></a>
+            <a class="result0_a" href="#" target="_blank"><div class="result result0">待解析</div></a>
         </div>
         <div><div></div>配置ssh账号密码
             <div>
                 自定义root密码<input class="root_password0" value="root">
                 确认root密码<input class="root_password1" value="root">
             </div>
-            <a class="result1_a" href="#" target="_blank"><div class="result1">待解析</div></a>
+            <a class="result1_a" href="#" target="_blank"><div class="result result1">待解析</div></a>
         </div>
+        <div class="result">ssh -o HostKeyAlgorithms=+ssh-rsa root@192.168.103.1</div>
     </body>
 </html>
 <script type="text/coffeescript">
